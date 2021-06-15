@@ -1,3 +1,7 @@
+/* * {
+  line-height: 100%;
+} */
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +14,45 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/*ant-properties*/
+.ant-layout-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: black !important;
+  color: white;
+  height: 50px !important;
+}
+.ant-menu.ant-menu-dark,
+.ant-menu-dark .ant-menu-sub,
+.ant-menu.ant-menu-dark .ant-menu-sub {
+  background: transparent !important;
+}
+
+.ant-menu.ant-menu-dark .ant-menu-item-selected,
+.ant-menu-submenu-popup.ant-menu-dark .ant-menu-item-selected {
+  background-color: #f44336 !important;
+}
+
+.ant-layout-header .ant-menu {
+  line-height: 50px !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0.5em !important;
+  color: rgba(0, 0, 0, 0.85);
+  font-weight: 500;
+}
+
+/*Navbar*/
+.website-logo h3 {
+  color: whitesmoke;
+  font-size: 1.5em;
 }
