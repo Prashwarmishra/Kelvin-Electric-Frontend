@@ -10,7 +10,9 @@ export default class Navbar extends Component {
       <Header>
         <div className="website-logo">
           <h3>
-            <ApiFilled style={{ color: 'white', fontSize: '1.4rem' }} />
+            <ApiFilled
+              style={{ color: 'white', fontSize: '1.4rem', marginRight: 5 }}
+            />
             Kelvin Electric
           </h3>
         </div>

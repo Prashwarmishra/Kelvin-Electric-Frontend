@@ -23,7 +23,10 @@ code {
   align-items: center;
   background: black !important;
   color: white;
-  height: 50px !important;
+  /* height: 50px !important; */
+  position: fixed;
+  z-index: 1;
+  width: 100%;
 }
 .ant-menu.ant-menu-dark,
 .ant-menu-dark .ant-menu-sub,
@@ -36,9 +39,9 @@ code {
   background-color: #f44336 !important;
 }
 
-.ant-layout-header .ant-menu {
-  line-height: 50px !important;
-}
+/* .ant-layout-header .ant-menu {
+  line-height: 60px !important;
+} */
 
 h1,
 h2,
@@ -61,54 +64,5 @@ h6 {
 .website-logo h3 {
   color: whitesmoke;
   font-size: 1.5em;
-}
-
-/*carousel*/
-.hero-item {
-  position: relative !important;
-}
-
-.hero-heading {
-  position: absolute;
-  margin: 0;
-  width: 615px;
-  line-height: 1;
-  font-family: 'Major Mono Display', monospace;
-  font-size: 4rem;
-  top: -20px;
-}
-
-.hero-info {
-  position: absolute;
-  font-family: 'Poppins', sans-serif;
-  color: black;
-  top: 25%;
-  line-height: 2;
-  width: 300px;
-  right: 70px;
-  font-size: 1.5em;
-  text-align: end;
-}
-
-.hero-item-1 {
-  background: radial-gradient(royalblue, darkslategray);
-}
-
-.hero-item-1 h3,
-.hero-item-2 h3,
-.hero-item-3 h3,
-.hero-item-4 h3 {
-  color: white;
-}
-
-.hero-item-2 {
-  background: radial-gradient(#d2cbcb, black);
-}
-
-.hero-item-3 {
-  background: radial-gradient(goldenrod, brown);
-}
-
-.hero-item-4 {
-  background: radial-gradient(olivedrab, darkgreen);
+  letter-spacing: 3px;
 }
