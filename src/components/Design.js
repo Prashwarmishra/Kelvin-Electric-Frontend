@@ -267,6 +267,28 @@ function Design(props) {
           </div>
         </div>
       </div>
+
+      <div className="button-section">
+        <div className="bs-child">
+          <h2>Need more Convincing?</h2>
+          <p>
+            Experience the unique driving fun and dynamics of our e-scooter at
+            first hand. Convince yourself of the numerous advantages of
+            e-mobility!
+          </p>
+          <button>Test Ride</button>
+        </div>
+
+        <div className="bs-child">
+          <h2>Convinced?</h2>
+          <p>
+            Book your Kelvin by paying a small deposit fee of &#8377; 2500,
+            fully refundable. One of our representatives would then get in touch
+            with you with more details.
+          </p>
+          <button>Pre Book</button>
+        </div>
+      </div>
     </div>
   );
 }
