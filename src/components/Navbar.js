@@ -23,7 +23,9 @@ export default class Navbar extends Component {
           <Menu.Item key="1">Locate</Menu.Item>
           <Menu.Item key="2">Test-ride</Menu.Item>
           <Menu.Item key="3">Book Now</Menu.Item>
-          <Menu.Item key="4">Login</Menu.Item>
+          <Menu.Item key="4">
+            <Link to="/login">Login</Link>
+          </Menu.Item>
           <Menu.Item key="5">
             <Link to="/signup">Signup</Link>
           </Menu.Item>

@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Layout } from 'antd';
 import 'antd/dist/antd.css';
 
-import { Navbar, Home, Signup } from './';
+import { Navbar, Home, Signup, Login } from './';
 const { Content } = Layout;
 
 function App() {
@@ -14,6 +14,7 @@ function App() {
           <Content>
             <Route exact path="/" component={Home}></Route>
             <Route exact path="/signup" component={Signup}></Route>
+            <Route exact path="/login" component={Login}></Route>
           </Content>
         </Layout>
       </div>

@@ -46,6 +46,7 @@ button {
 
 .login-signup-form > button {
   width: 15rem;
+  margin: 10px auto;
   background: hsl(260, 8%, 14%);
   color: white;
   -webkit-box-shadow: 8px 8px 8px #cbced1, -8px -8px 8px #ffffff;
