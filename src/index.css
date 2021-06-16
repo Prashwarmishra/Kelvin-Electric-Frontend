@@ -21,7 +21,7 @@ code {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: black !important;
+  background: hsl(260, 8%, 14%) !important;
   color: white;
   /* height: 50px !important; */
   position: fixed;

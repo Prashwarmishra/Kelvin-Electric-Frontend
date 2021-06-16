@@ -1,0 +1,44 @@
+footer {
+  padding: 3em 4em;
+  background-color: hsl(260, 8%, 14%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo-section > h1 {
+  color: white;
+  font-size: 3rem;
+  letter-spacing: 5px;
+}
+
+.logo-icon {
+  color: 'white';
+  font-size: '3rem';
+  margin-right: 10px;
+}
+
+.socials {
+  list-style: none;
+  display: flex;
+  width: 35em;
+  justify-content: space-around;
+}
+
+.socials > li > a {
+  color: white;
+  font-size: 1.5em;
+}
+
+.footer-heading {
+  margin: auto;
+}
+
+.copyright {
+  color: cornflowerblue;
+}
+
+.go-top {
+  font-size: 3rem;
+  color: dimgrey;
+}
