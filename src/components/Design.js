@@ -77,12 +77,90 @@ function Design(props) {
           <p>
             Charging has never been so flexible! All you need to do is remove
             the battery, plug it into a standard household socket and you’re
-            ready to go! For a full-charging process this only takes an
-            impressive four hours – allowing you more time to drive!
+            ready to go!
           </p>
         </div>
         <div className="design-img">
           <img src={design_4} alt="kelvin_img" />
+        </div>
+      </div>
+
+      <div className="performance-metrics">
+        <div className="pm-parent">
+          <div className="pm-info">
+            <span className="pm-small">up to</span>
+            <span className="pm-big">95</span>
+            <span className="pm-small">km/hr</span>
+          </div>
+          <div className="pm-name">
+            <span>Speed</span>
+          </div>
+        </div>
+
+        <div className="pm-parent">
+          <div className="pm-info">
+            <span className="pm-small">up to</span>
+            <span className="pm-big">12</span>
+            <span className="pm-small">kW</span>
+          </div>
+          <div className="pm-name">
+            <span>Engine Power</span>
+          </div>
+        </div>
+
+        <div className="pm-parent">
+          <div className="pm-info">
+            <span className="pm-small">average</span>
+            <span className="pm-big">90</span>
+            <span className="pm-small">km</span>
+          </div>
+          <div className="pm-name">
+            <span>Range</span>
+          </div>
+        </div>
+
+        <div className="pm-parent">
+          <div className="pm-info">
+            <span className="pm-small">max</span>
+            <span className="pm-big">125</span>
+            <span className="pm-small">km</span>
+          </div>
+          <div className="pm-name">
+            <span>Range</span>
+          </div>
+        </div>
+
+        <div className="pm-parent">
+          <div className="pm-info">
+            <span className="pm-small">big</span>
+            <span className="pm-big">7</span>
+            <span className="pm-small">inch</span>
+          </div>
+          <div className="pm-name">
+            <span>Touch Display</span>
+          </div>
+        </div>
+
+        <div className="pm-parent">
+          <div className="pm-info">
+            <span className="pm-small">average</span>
+            <span className="pm-big">150</span>
+            <span className="pm-small">Nm</span>
+          </div>
+          <div className="pm-name">
+            <span>Torque</span>
+          </div>
+        </div>
+
+        <div className="pm-parent">
+          <div className="pm-info">
+            <span className="pm-small">upto</span>
+            <span className="pm-big">3</span>
+            <span className="pm-small">modular</span>
+          </div>
+          <div className="pm-name">
+            <span>Li-ion Batteries</span>
+          </div>
         </div>
       </div>
     </div>

@@ -8,8 +8,8 @@ import kelvin_grey from '../assets/images/kelvin_grey.png';
 import kelvin_last from '../assets/images/kelvin_last.png';
 
 const contentStyle = {
-  height: 585,
-  width: 1325,
+  height: 600,
+  width: 1389,
   color: '#fff',
   lineHeight: '160px',
   textAlign: 'center',

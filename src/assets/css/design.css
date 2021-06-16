@@ -21,14 +21,60 @@
   border-radius: 2rem 0;
 }
 
+.design-info {
+  padding: 0 2rem;
+}
+
 .design-info > h3 {
   font-family: 'Open Sans', sans-serif;
   text-align: end;
-  font-size: 3.5rem;
+  font-size: 3rem;
 }
 
 .design-info > p {
   font-family: 'Roboto', sans-serif;
   font-size: 1.2rem;
   text-align: justify;
+}
+
+.performance-metrics {
+  margin: 3em 3em;
+  padding: 4em;
+  box-shadow: 5px 5px 14px 7px gainsboro;
+  border-radius: 1em;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.pm-parent {
+  margin: 10px 50px;
+}
+
+.pm-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 50%;
+  width: 7.5rem;
+  /* color: white; */
+  box-shadow: 33px 13px 20px #cbced1, -13px -13px 20px #fff;
+}
+
+.pm-small {
+  font-size: 1.1rem;
+}
+
+.pm-big {
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.pm-name {
+  text-align: center;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  font-weight: bold;
 }
