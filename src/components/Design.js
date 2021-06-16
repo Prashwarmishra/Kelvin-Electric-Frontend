@@ -7,6 +7,8 @@ import design_4 from '../assets/images/design_4.jpg';
 import kelvin_black from '../assets/images/kelvin_black.png';
 import kelvin_yellow from '../assets/images/kelvin_yellow.png';
 import kelvin_grey from '../assets/images/kelvin_grey.png';
+import app_1 from '../assets/images/app1.png';
+import app_2 from '../assets/images/app_2.png';
 
 function Design(props) {
   return (
@@ -167,13 +169,45 @@ function Design(props) {
         </div>
       </div>
 
+      <div className="app-section">
+        <div className="as-heading">
+          <h2>Kelvin Connect</h2>
+        </div>
+        <div className="as-parent">
+          <div className="as-child">
+            <img src={app_1} alt="app_1" />
+          </div>
+          <div className="as-child">
+            <span>
+              {' '}
+              <i class="fas fa-route"></i> Control your Kelvin remotely
+            </span>
+            <span>
+              {' '}
+              <i class="fas fa-car-battery"></i> Check battery status
+            </span>
+            <span>
+              {' '}
+              <i class="fas fa-database"></i> Record driving statistics
+            </span>
+            <span>
+              {' '}
+              <i class="fab fa-bluetooth"></i> Connect your phone
+            </span>
+          </div>
+          <div className="as-child">
+            <img src={app_2} alt="app_2" />
+          </div>
+        </div>
+      </div>
+
       <div className="pricing-section">
         <div className="ps-heading">
           <h2>Pricing</h2>
         </div>
         <div className="ps-parent">
           <div className="ps-child">
-            <div className="ps-heading">
+            <div className="ps-child-heading">
               <h2>Kelvin 250</h2>
             </div>
             <div className="ps-img">
@@ -193,7 +227,7 @@ function Design(props) {
           </div>
 
           <div className="ps-child">
-            <div className="ps-heading">
+            <div className="ps-child-heading">
               <h2>Kelvin 250x</h2>
             </div>
             <div className="ps-img">
@@ -213,7 +247,7 @@ function Design(props) {
           </div>
 
           <div className="ps-child">
-            <div className="ps-heading">
+            <div className="ps-child-heading">
               <h2>Kelvin 250 plus</h2>
             </div>
             <div className="ps-img">
