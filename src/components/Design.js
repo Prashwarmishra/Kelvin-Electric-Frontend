@@ -4,6 +4,9 @@ import design_1 from '../assets/images/design_1.jpg';
 import design_2 from '../assets/images/design_2.jpg';
 import design_3 from '../assets/images/design_3.jpg';
 import design_4 from '../assets/images/design_4.jpg';
+import kelvin_black from '../assets/images/kelvin_black.png';
+import kelvin_yellow from '../assets/images/kelvin_yellow.png';
+import kelvin_grey from '../assets/images/kelvin_grey.png';
 
 function Design(props) {
   return (
@@ -160,6 +163,73 @@ function Design(props) {
           </div>
           <div className="pm-name">
             <span>Li-ion Batteries</span>
+          </div>
+        </div>
+      </div>
+
+      <div className="pricing-section">
+        <div className="ps-heading">
+          <h2>Pricing</h2>
+        </div>
+        <div className="ps-parent">
+          <div className="ps-child">
+            <div className="ps-heading">
+              <h2>Kelvin 250</h2>
+            </div>
+            <div className="ps-img">
+              <img src={kelvin_black} alt="kelvin_black" />
+            </div>
+            <div className="ps-info">
+              <span>1 Battery</span>
+              <hr />
+              <span>Normal Charging</span>
+              <hr />
+              <span>Rear disc brake</span>
+              <hr />
+              <span>No Cruise Control</span>
+              <hr />
+            </div>
+            <div className="ps-price">&#8377; 85,560</div>
+          </div>
+
+          <div className="ps-child">
+            <div className="ps-heading">
+              <h2>Kelvin 250x</h2>
+            </div>
+            <div className="ps-img">
+              <img src={kelvin_yellow} alt="kelvin_yellow" />
+            </div>
+            <div className="ps-info">
+              <span>2 Batteries</span>
+              <hr />
+              <span>Fast Charging</span>
+              <hr />
+              <span>Dual disc brakes</span>
+              <hr />
+              <span>Cruise Control</span>
+              <hr />
+            </div>
+            <div className="ps-price">&#8377; 99,560</div>
+          </div>
+
+          <div className="ps-child">
+            <div className="ps-heading">
+              <h2>Kelvin 250 plus</h2>
+            </div>
+            <div className="ps-img">
+              <img src={kelvin_grey} alt="kelvin_grey" />
+            </div>
+            <div className="ps-info">
+              <span>3 Batteries</span>
+              <hr />
+              <span>Wrap Charging</span>
+              <hr />
+              <span>Dual disc brakes</span>
+              <hr />
+              <span>Cruise Control</span>
+              <hr />
+            </div>
+            <div className="ps-price">&#8377; 1,09,560</div>
           </div>
         </div>
       </div>

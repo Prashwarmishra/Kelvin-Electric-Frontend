@@ -11,8 +11,14 @@
   grid-gap: 3em;
   margin: 3em 3em;
   padding: 4em;
-  box-shadow: 5px 5px 14px 7px gainsboro;
+  /* box-shadow: 5px 5px 14px 7px gainsboro; */
+  box-shadow: 33px 13px 20px #cbced1, -13px -13px 20px #fff;
   border-radius: 1em;
+  transition: all 500ms;
+}
+
+.feature-card:hover {
+  transform: scale(0.97);
 }
 
 .design-img > img {
@@ -23,6 +29,8 @@
 
 .design-info {
   padding: 0 2rem;
+  box-shadow: 33px 13px 20px #cbced1, -13px -13px 20px #fff;
+  border-radius: 1rem;
 }
 
 .design-info > h3 {
@@ -45,10 +53,21 @@
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  transition: all 500ms;
+}
+
+.performance-metrics:hover {
+  transform: scale(0.97);
 }
 
 .pm-parent {
   margin: 10px 50px;
+  transition: all 250ms;
+  cursor: context-menu;
+}
+
+.pm-parent:hover {
+  transform: scale(0.97);
 }
 
 .pm-info {
@@ -77,4 +96,78 @@
   font-size: 1.2rem;
   letter-spacing: 1px;
   font-weight: bold;
+}
+
+.pricing-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 3em 3em;
+  padding: 4em;
+  box-shadow: 5px 5px 14px 7px gainsboro;
+  border-radius: 1em;
+}
+
+.ps-parent {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 2em;
+}
+
+.ps-heading > h2 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.ps-child {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 33px 13px 20px #cbced1, -13px -13px 20px #fff;
+  padding: 1em;
+  border-radius: 2em;
+  transition: all 250ms;
+}
+
+.ps-child:hover {
+  transform: scale(0.95);
+}
+
+.ps-img > img {
+  width: 100%;
+}
+
+.ps-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ps-info > span {
+  font-size: 1.1rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.ps-info > hr {
+  width: 100%;
+}
+
+.ps-price {
+  margin: 10px;
+  padding: 5px 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  width: 8rem;
+  text-align: center;
+  box-shadow: 33px 13px 20px #cbced1, -13px -13px 20px #fff;
+  border: 1px solid darkgray;
+  border-radius: 2em;
+  transition: all 250ms;
+  cursor: pointer;
+}
+
+.ps-price:hover {
+  transform: scale(0.95);
 }

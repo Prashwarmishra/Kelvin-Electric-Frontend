@@ -3,7 +3,6 @@ import { Carousel } from 'antd';
 import '../assets/css/carousel.css';
 import kelvin_black from '../assets/images/kelvin_black.png';
 import kelvin_yellow from '../assets/images/kelvin_yellow.png';
-// import kelvin_blue from '../assets/images/kelvin_blue.png';
 import kelvin_grey from '../assets/images/kelvin_grey.png';
 import kelvin_last from '../assets/images/kelvin_last.png';
 
