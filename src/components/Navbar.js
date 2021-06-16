@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { Layout, Menu } from 'antd';
 import { ApiFilled } from '@ant-design/icons';
 
@@ -23,7 +24,9 @@ export default class Navbar extends Component {
           <Menu.Item key="2">Test-ride</Menu.Item>
           <Menu.Item key="3">Book Now</Menu.Item>
           <Menu.Item key="4">Login</Menu.Item>
-          <Menu.Item key="5">Signup</Menu.Item>
+          <Menu.Item key="5">
+            <Link to="/signup">Signup</Link>
+          </Menu.Item>
         </Menu>
       </Header>
     );

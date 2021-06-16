@@ -1,0 +1,53 @@
+.wrapper {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup-wrapper {
+  padding: 1rem;
+  -webkit-box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff;
+  box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff;
+  margin: 20px;
+  border-radius: 2rem;
+}
+
+.login-signup-heading {
+  font-family: 'Poppins', sans-serif;
+  font-size: 3rem;
+  margin: 0;
+}
+
+.login-signup-form {
+  display: flex;
+  width: 525px;
+  flex-wrap: wrap;
+}
+
+.login-signup-form > input,
+button {
+  border: none;
+  margin: 10px;
+  background: none;
+  font-size: 18px;
+  color: #555;
+  font-weight: 100;
+  border-radius: 1rem;
+  padding: 0.5em 1em;
+  outline: none;
+}
+
+.login-signup-form > input {
+  -webkit-box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+  box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+}
+
+.login-signup-form > button {
+  width: 15rem;
+  background: hsl(260, 8%, 14%);
+  color: white;
+  -webkit-box-shadow: 8px 8px 8px #cbced1, -8px -8px 8px #ffffff;
+  box-shadow: 8px 8px 8px #cbced1, -8px -8px 8px #ffffff;
+}
