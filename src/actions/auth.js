@@ -14,6 +14,9 @@ import {
   LOGIN_FAILURE,
   CLEAR_AUTH_MESSAGES,
   AUTHENTICATE_USER,
+  FORGET_PASSWORD_START,
+  FORGET_PASSWORD_SUCCESS,
+  FORGET_PASSWORD_FAILURE,
 } from './actionTypes';
 
 /*SIGNUP*/
@@ -120,5 +123,46 @@ export function authenticateUser(user) {
   return {
     type: AUTHENTICATE_USER,
     user,
+  };
+}
+
+//FORGET-PASSWORD
+export function forgetPasswordStart() {
+  return {
+    type: FORGET_PASSWORD_START,
+  };
+}
+
+export function forgetPasswordSuccess(success) {
+  return {
+    type: FORGET_PASSWORD_SUCCESS,
+    success,
+  };
+}
+
+export function forgetPasswordFailure(error) {
+  return {
+    type: FORGET_PASSWORD_FAILURE,
+    error,
+  };
+}
+
+export function forgetPassword(email) {
+  return (dispatch) => {
+    dispatch(forgetPasswordStart());
+    const url = APIUrls.forgetPassword();
+    fetch(url, {
+      method: 'POST',
+      headers: getAuthHeader(),
+      body: getFormBody({ email }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('FORGET PASSWORD DATA: ', data);
+        if (data.success) {
+          return dispatch(forgetPasswordSuccess(data.message));
+        }
+        return dispatch(forgetPasswordFailure(data.message));
+      });
   };
 }

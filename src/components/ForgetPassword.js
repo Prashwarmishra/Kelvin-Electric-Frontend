@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import '../assets/css/login_signup.css';
-import { clearAuthMessages } from '../actions/auth';
+import { clearAuthMessages, forgetPassword } from '../actions/auth';
 
 class ForgetPassword extends Component {
   constructor(props) {
@@ -25,8 +25,9 @@ class ForgetPassword extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     const { email } = this.state;
+    console.log('/////////', email);
     if (email) {
-      //   this.props.dispatch(login(email, password));
+      this.props.dispatch(forgetPassword(email));
       this.setState({
         email: '',
       });
@@ -34,7 +35,7 @@ class ForgetPassword extends Component {
   };
 
   render() {
-    const { error, success } = this.props.auth;
+    const { error, success, inProgress } = this.props.auth;
     const { email } = this.state;
     return (
       <div className="wrapper">
@@ -55,7 +56,13 @@ class ForgetPassword extends Component {
               onChange={(e) => this.handleChange('email', e.target.value)}
               value={email}
             />
-            <button onClick={this.handleSubmit}>Reset Password</button>
+            {inProgress ? (
+              <button disabled className="disabled-btn">
+                Searching User...
+              </button>
+            ) : (
+              <button onClick={this.handleSubmit}>Reset Password</button>
+            )}
           </form>
         </div>
       </div>

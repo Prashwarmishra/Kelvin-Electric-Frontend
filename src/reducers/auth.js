@@ -1,6 +1,9 @@
 import {
   AUTHENTICATE_USER,
   CLEAR_AUTH_MESSAGES,
+  FORGET_PASSWORD_FAILURE,
+  FORGET_PASSWORD_START,
+  FORGET_PASSWORD_SUCCESS,
   LOGIN_FAILURE,
   LOGIN_START,
   LOGIN_SUCCESS,
@@ -21,11 +24,13 @@ export default function auth(state = initialAuthState, action) {
   switch (action.type) {
     case SIGNUP_START:
     case LOGIN_START:
+    case FORGET_PASSWORD_START:
       return {
         ...state,
         inProgress: true,
       };
     case SIGNUP_SUCCESS:
+    case FORGET_PASSWORD_SUCCESS:
       return {
         ...state,
         inProgress: false,
@@ -34,6 +39,7 @@ export default function auth(state = initialAuthState, action) {
       };
     case SIGNUP_FAILURE:
     case LOGIN_FAILURE:
+    case FORGET_PASSWORD_FAILURE:
       return {
         ...state,
         inProgress: false,
