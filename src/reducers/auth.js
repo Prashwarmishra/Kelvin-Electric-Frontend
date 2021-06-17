@@ -7,6 +7,9 @@ import {
   LOGIN_FAILURE,
   LOGIN_START,
   LOGIN_SUCCESS,
+  RESET_PASSWORD_FAILURE,
+  RESET_PASSWORD_START,
+  RESET_PASSWORD_SUCCESS,
   SIGNUP_FAILURE,
   SIGNUP_START,
   SIGNUP_SUCCESS,
@@ -26,6 +29,7 @@ export default function auth(state = initialAuthState, action) {
     case SIGNUP_START:
     case LOGIN_START:
     case FORGET_PASSWORD_START:
+    case RESET_PASSWORD_START:
       return {
         ...state,
         inProgress: true,
@@ -41,6 +45,7 @@ export default function auth(state = initialAuthState, action) {
     case SIGNUP_FAILURE:
     case LOGIN_FAILURE:
     case FORGET_PASSWORD_FAILURE:
+    case RESET_PASSWORD_FAILURE:
       return {
         ...state,
         inProgress: false,
@@ -60,6 +65,7 @@ export default function auth(state = initialAuthState, action) {
         ...state,
         error: null,
         success: null,
+        inProgress: false,
       };
     case AUTHENTICATE_USER:
       return {
@@ -72,6 +78,12 @@ export default function auth(state = initialAuthState, action) {
         ...state,
         user: {},
         isLoggedin: false,
+      };
+    case RESET_PASSWORD_SUCCESS:
+      return {
+        ...state,
+        success: action.success,
+        error: null,
       };
     default:
       return state;

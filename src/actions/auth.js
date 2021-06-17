@@ -199,10 +199,10 @@ export function resetPasswordFailure(error) {
   };
 }
 
-export function resetPassword(token, password, confirmPassword) {
+export function resetPassword(userId, password, confirmPassword) {
   return (dispatch) => {
-    dispatch(forgetPasswordStart());
-    const url = APIUrls.resetPassword(token);
+    dispatch(resetPasswordStart());
+    const url = APIUrls.resetPassword(userId);
     fetch(url, {
       method: 'POST',
       headers: getAuthHeader(),
