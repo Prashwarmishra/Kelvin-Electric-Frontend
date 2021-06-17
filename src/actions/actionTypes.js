@@ -10,3 +10,6 @@ export const LOGIN_FAILURE = 'LOGIN_FAILURE';
 
 //clear success/error messages
 export const CLEAR_AUTH_MESSAGES = 'CLEAR_AUTH_MESSAGES';
+
+//persist logged in users
+export const AUTHENTICATE_USER = 'AUTHENTICATE_USER';

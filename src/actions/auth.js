@@ -13,6 +13,7 @@ import {
   LOGIN_SUCCESS,
   LOGIN_FAILURE,
   CLEAR_AUTH_MESSAGES,
+  AUTHENTICATE_USER,
 } from './actionTypes';
 
 /*SIGNUP*/
@@ -111,5 +112,13 @@ export function login(email, password) {
 export function clearAuthMessages() {
   return {
     type: CLEAR_AUTH_MESSAGES,
+  };
+}
+
+//PERSIST LOGGED IN USERS
+export function authenticateUser(user) {
+  return {
+    type: AUTHENTICATE_USER,
+    user,
   };
 }

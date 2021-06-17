@@ -180,19 +180,19 @@ function Design(props) {
           <div className="as-child">
             <span>
               {' '}
-              <i class="fas fa-route"></i> Control your Kelvin remotely
+              <i className="fas fa-route"></i> Control your Kelvin remotely
             </span>
             <span>
               {' '}
-              <i class="fas fa-car-battery"></i> Check battery status
+              <i className="fas fa-car-battery"></i> Check battery status
             </span>
             <span>
               {' '}
-              <i class="fas fa-database"></i> Record driving statistics
+              <i className="fas fa-database"></i> Record driving statistics
             </span>
             <span>
               {' '}
-              <i class="fab fa-bluetooth"></i> Connect your phone
+              <i className="fab fa-bluetooth"></i> Connect your phone
             </span>
           </div>
           <div className="as-child">
