@@ -89,11 +89,7 @@ class Signup extends Component {
               value={confirmPassword}
             />
             {inProgress ? (
-              <button
-                onClick={this.handleSubmit}
-                disabled
-                className="disabled-btn"
-              >
+              <button disabled className="disabled-btn">
                 Signing Up...
               </button>
             ) : (

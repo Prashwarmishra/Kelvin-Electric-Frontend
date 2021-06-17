@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import '../assets/css/login_signup.css';
+import { Link } from 'react-router-dom';
 
+import '../assets/css/login_signup.css';
 import { clearAuthMessages, login } from '../actions/auth';
 
 class Login extends Component {
@@ -36,7 +37,7 @@ class Login extends Component {
   };
 
   render() {
-    const { error } = this.props.auth;
+    const { error, inProgress } = this.props.auth;
     const { email, password } = this.state;
     return (
       <div className="wrapper">
@@ -59,8 +60,15 @@ class Login extends Component {
               onChange={(e) => this.handleChange('password', e.target.value)}
               value={password}
             />
-            <button onClick={this.handleSubmit}>Login</button>
+            {inProgress ? (
+              <button disabled className="disabled-btn">
+                Logging In...
+              </button>
+            ) : (
+              <button onClick={this.handleSubmit}>Log In</button>
+            )}
           </form>
+          <Link to="/forget-password">Forgot Password?</Link>
         </div>
       </div>
     );

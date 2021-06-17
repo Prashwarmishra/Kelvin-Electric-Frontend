@@ -1,13 +1,14 @@
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Layout } from 'antd';
 import jwtDecode from 'jwt-decode';
 
 import 'antd/dist/antd.css';
-import { Navbar, Home, Signup, Login } from './';
+import { Navbar, Home, Signup, Login, ForgetPassword } from './';
 import { getAuthTokenFromLocalStorage } from '../helpers/utils';
 import { authenticateUser } from '../actions/auth';
+import Page404 from './Page404';
 const { Content } = Layout;
 
 class App extends Component {
@@ -25,9 +26,16 @@ class App extends Component {
           <Layout>
             <Navbar />
             <Content>
-              <Route exact path="/" component={Home}></Route>
-              <Route path="/signup" component={Signup}></Route>
-              <Route path="/login" component={Login}></Route>
+              <Switch>
+                <Route exact path="/" component={Home}></Route>
+                <Route path="/signup" component={Signup}></Route>
+                <Route path="/login" component={Login}></Route>
+                <Route
+                  path="/forget-password"
+                  component={ForgetPassword}
+                ></Route>
+                <Route component={Page404}></Route>
+              </Switch>
             </Content>
           </Layout>
         </div>

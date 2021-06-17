@@ -66,3 +66,9 @@ h6 {
   font-size: 1.5em;
   letter-spacing: 3px;
 }
+
+.page404 {
+  height: 89vh;
+  padding: 50px;
+  font-size: 1.3rem;
+}
