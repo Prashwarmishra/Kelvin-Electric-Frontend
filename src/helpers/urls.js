@@ -3,4 +3,5 @@ const API_ROOT = 'http://localhost:8000/api/v1';
 
 export const APIUrls = {
   userSignup: () => `${API_ROOT}/user/sign-up`,
+  userLogin: () => `${API_ROOT}/user/sign-in`,
 };

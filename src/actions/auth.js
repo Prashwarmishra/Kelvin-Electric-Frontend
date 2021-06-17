@@ -4,8 +4,17 @@ import {
   getFormBody,
   setAuthTokenInLocalStorage,
 } from '../helpers/utils';
-import { SIGNUP_FAILURE, SIGNUP_START, SIGNUP_SUCCESS } from './actionTypes';
 
+import {
+  SIGNUP_FAILURE,
+  SIGNUP_START,
+  SIGNUP_SUCCESS,
+  LOGIN_START,
+  LOGIN_SUCCESS,
+  LOGIN_FAILURE,
+} from './actionTypes';
+
+/*SIGNUP*/
 export function signupStart() {
   return {
     type: SIGNUP_START,
@@ -44,11 +53,55 @@ export function signup(name, email, phone, password, confirmPassword) {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
+        console.log('SIGNUP DATA', data);
         if (data.success) {
           return dispatch(signupSuccess(data.message));
         }
         return dispatch(signupFailure(data.message));
+      });
+  };
+}
+
+/*LOGIN*/
+
+export function loginStart() {
+  return {
+    type: LOGIN_START,
+  };
+}
+
+export function loginSuccess(user) {
+  return {
+    type: LOGIN_SUCCESS,
+    user,
+  };
+}
+
+export function loginFailure(error) {
+  return {
+    type: LOGIN_FAILURE,
+    error,
+  };
+}
+
+export function login(email, password) {
+  return (dispatch) => {
+    dispatch(loginStart());
+    const url = APIUrls.userLogin();
+
+    fetch(url, {
+      method: 'POST',
+      headers: getAuthHeader(),
+      body: getFormBody({ email, password }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('LOGIN DATA:', data);
+        if (data.success) {
+          setAuthTokenInLocalStorage(data.data.token);
+          return dispatch(loginSuccess(data.data.user));
+        }
+        return dispatch(loginFailure(data.message));
       });
   };
 }
