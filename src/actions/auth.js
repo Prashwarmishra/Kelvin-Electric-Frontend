@@ -18,6 +18,9 @@ import {
   FORGET_PASSWORD_SUCCESS,
   FORGET_PASSWORD_FAILURE,
   USER_LOGOUT,
+  RESET_PASSWORD_START,
+  RESET_PASSWORD_SUCCESS,
+  RESET_PASSWORD_FAILURE,
 } from './actionTypes';
 
 /*SIGNUP*/
@@ -172,5 +175,46 @@ export function forgetPassword(email) {
 export function userLogout() {
   return {
     type: USER_LOGOUT,
+  };
+}
+
+//RESET PASSWORD
+export function resetPasswordStart() {
+  return {
+    type: RESET_PASSWORD_START,
+  };
+}
+
+export function resetPasswordSuccess(success) {
+  return {
+    type: RESET_PASSWORD_SUCCESS,
+    success,
+  };
+}
+
+export function resetPasswordFailure(error) {
+  return {
+    type: RESET_PASSWORD_FAILURE,
+    error,
+  };
+}
+
+export function resetPassword(token, password, confirmPassword) {
+  return (dispatch) => {
+    dispatch(forgetPasswordStart());
+    const url = APIUrls.resetPassword(token);
+    fetch(url, {
+      method: 'POST',
+      headers: getAuthHeader(),
+      body: getFormBody({ password, confirm_password: confirmPassword }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('RESET PASSWORD DATA: ', data);
+        if (data.success) {
+          return dispatch(resetPasswordSuccess(data.message));
+        }
+        return dispatch(resetPasswordFailure(data.message));
+      });
   };
 }

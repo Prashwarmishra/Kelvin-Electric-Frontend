@@ -5,7 +5,7 @@ import { Layout } from 'antd';
 import jwtDecode from 'jwt-decode';
 
 import 'antd/dist/antd.css';
-import { Navbar, Home, Signup, Login, ForgetPassword } from './';
+import { Navbar, Home, Signup, Login, ForgetPassword, ResetPassword } from './';
 import { getAuthTokenFromLocalStorage } from '../helpers/utils';
 import { authenticateUser } from '../actions/auth';
 import Page404 from './Page404';
@@ -33,6 +33,10 @@ class App extends Component {
                 <Route
                   path="/forget-password"
                   component={ForgetPassword}
+                ></Route>
+                <Route
+                  path="/reset-password/:userId"
+                  component={ResetPassword}
                 ></Route>
                 <Route component={Page404}></Route>
               </Switch>

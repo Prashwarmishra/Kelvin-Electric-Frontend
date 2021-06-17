@@ -5,4 +5,5 @@ export const APIUrls = {
   userSignup: () => `${API_ROOT}/user/sign-up`,
   userLogin: () => `${API_ROOT}/user/sign-in`,
   forgetPassword: () => `${API_ROOT}/user/forgot-password`,
+  resetPassword: (token) => `${API_ROOT}/user/reset-password/${token}`
 };

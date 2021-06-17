@@ -7,6 +7,7 @@ import Signup from './Signup';
 import Login from './Login';
 import ForgetPassword from './ForgetPassword';
 import Page404 from './Page404';
+import ResetPassword from './ResetPassword';
 
 export {
   Navbar,
@@ -18,4 +19,5 @@ export {
   Login,
   ForgetPassword,
   Page404,
+  ResetPassword,
 };
