@@ -17,6 +17,7 @@ import {
   FORGET_PASSWORD_START,
   FORGET_PASSWORD_SUCCESS,
   FORGET_PASSWORD_FAILURE,
+  USER_LOGOUT,
 } from './actionTypes';
 
 /*SIGNUP*/
@@ -164,5 +165,12 @@ export function forgetPassword(email) {
         }
         return dispatch(forgetPasswordFailure(data.message));
       });
+  };
+}
+
+//LOGOUT
+export function userLogout() {
+  return {
+    type: USER_LOGOUT,
   };
 }

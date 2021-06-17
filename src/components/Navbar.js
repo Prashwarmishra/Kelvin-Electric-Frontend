@@ -2,11 +2,20 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Layout, Menu } from 'antd';
 import { ApiFilled } from '@ant-design/icons';
+import { connect } from 'react-redux';
+import { userLogout } from '../actions/auth';
 
 const { Header } = Layout;
 
-export default class Navbar extends Component {
+class Navbar extends Component {
+  handleLogout = () => {
+    localStorage.removeItem('token');
+    this.props.dispatch(userLogout());
+  };
+
   render() {
+    const { isLoggedin } = this.props.auth;
+
     return (
       <Header>
         <div className="website-logo">
@@ -26,13 +35,29 @@ export default class Navbar extends Component {
           <Menu.Item key="2">Test-ride</Menu.Item>
           <Menu.Item key="3">Book Now</Menu.Item>
           <Menu.Item key="4">
-            <Link to="/login">Login</Link>
+            {isLoggedin ? (
+              <div>My Account</div>
+            ) : (
+              <Link to="/login">Log In</Link>
+            )}
           </Menu.Item>
           <Menu.Item key="5">
-            <Link to="/signup">Signup</Link>
+            {isLoggedin ? (
+              <div onClick={this.handleLogout}>Sign Out</div>
+            ) : (
+              <Link to="/signup">Sign Up</Link>
+            )}
           </Menu.Item>
         </Menu>
       </Header>
     );
   }
 }
+
+function mapStateToProps({ auth }) {
+  return {
+    auth,
+  };
+}
+
+export default connect(mapStateToProps)(Navbar);
