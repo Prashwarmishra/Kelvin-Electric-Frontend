@@ -25,7 +25,6 @@ class Signup extends Component {
     e.preventDefault();
     const { name, email, phone, password, confirmPassword } = this.state;
     if (name && email && password === confirmPassword) {
-      console.log('/////////////', this.state);
       this.props.dispatch(
         signup(name, email, phone, password, confirmPassword)
       );
@@ -34,8 +33,11 @@ class Signup extends Component {
 
   render() {
     const { name, email, phone, password, confirmPassword } = this.state;
+    const { success, error, inProgress } = this.props.auth;
     return (
       <div className="wrapper">
+        {success && <div className="success-dialog">{success}</div>}
+        {error && <div className="error-dialog">{error}</div>}
         <h1 className="login-signup-heading">Sign Up</h1>
         <div className="signup-wrapper">
           <form className="login-signup-form">
@@ -75,7 +77,17 @@ class Signup extends Component {
               }
               value={confirmPassword}
             />
-            <button onClick={this.handleSubmit}>Sign Up</button>
+            {inProgress ? (
+              <button
+                onClick={this.handleSubmit}
+                disabled
+                className="disabled-btn"
+              >
+                Signing Up...
+              </button>
+            ) : (
+              <button onClick={this.handleSubmit}>Sign Up</button>
+            )}
           </form>
         </div>
       </div>
@@ -83,4 +95,10 @@ class Signup extends Component {
   }
 }
 
-export default connect()(Signup);
+function mapStateToProps(state) {
+  return {
+    auth: state.auth,
+  };
+}
+
+export default connect(mapStateToProps)(Signup);

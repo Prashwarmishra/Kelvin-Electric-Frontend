@@ -12,10 +12,10 @@ export function signupStart() {
   };
 }
 
-export function signupSuccess(user) {
+export function signupSuccess(success) {
   return {
     type: SIGNUP_SUCCESS,
-    user,
+    success,
   };
 }
 
@@ -28,6 +28,7 @@ export function signupFailure(error) {
 
 export function signup(name, email, phone, password, confirmPassword) {
   return (dispatch) => {
+    dispatch(signupStart());
     const url = APIUrls.userSignup();
 
     fetch(url, {
@@ -44,9 +45,10 @@ export function signup(name, email, phone, password, confirmPassword) {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
-        // if(data.success){
-        //     setAuthTokenInLocalStorage(data.dat)
-        // }
+        if (data.success) {
+          return dispatch(signupSuccess(data.message));
+        }
+        return dispatch(signupFailure(data.message));
       });
   };
 }

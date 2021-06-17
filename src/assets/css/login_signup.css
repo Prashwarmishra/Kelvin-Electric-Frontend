@@ -51,4 +51,28 @@ button {
   color: white;
   -webkit-box-shadow: 8px 8px 8px #cbced1, -8px -8px 8px #ffffff;
   box-shadow: 8px 8px 8px #cbced1, -8px -8px 8px #ffffff;
+  transition: all 250ms ease-in-out;
+  cursor: pointer;
+}
+
+.login-signup-form > button:hover {
+  transform: scale(0.97);
+}
+
+.error-dialog {
+  padding: 10px;
+  border: 1px solid red;
+  background: #f3bdbd;
+  border-radius: 10px;
+}
+
+.success-dialog {
+  padding: 10px;
+  border-radius: 10px;
+  background: #bde4bd;
+  border: 1px solid green;
+}
+
+.disabled-btn {
+  background: hsl(260deg 7% 47%) !important;
 }
