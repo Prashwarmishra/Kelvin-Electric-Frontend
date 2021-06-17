@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { signup } from '../actions/auth';
+import { clearAuthMessages, signup } from '../actions/auth';
 import '../assets/css/login_signup.css';
 
 class Signup extends Component {
@@ -13,6 +13,10 @@ class Signup extends Component {
       password: '',
       confirmPassword: '',
     };
+  }
+
+  componentWillUnmount() {
+    this.props.dispatch(clearAuthMessages());
   }
 
   handleChange = (userField, value) => {
@@ -28,6 +32,13 @@ class Signup extends Component {
       this.props.dispatch(
         signup(name, email, phone, password, confirmPassword)
       );
+      this.setState({
+        name: '',
+        email: '',
+        phone: '',
+        password: '',
+        confirmPassword: '',
+      });
     }
   };
 

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import '../assets/css/login_signup.css';
 
-import { login } from '../actions/auth';
+import { clearAuthMessages, login } from '../actions/auth';
 
 class Login extends Component {
   constructor(props) {
@@ -11,6 +11,10 @@ class Login extends Component {
       email: '',
       password: '',
     };
+  }
+
+  componentWillUnmount() {
+    this.props.dispatch(clearAuthMessages());
   }
 
   handleChange = (userField, value) => {
@@ -24,6 +28,10 @@ class Login extends Component {
     const { email, password } = this.state;
     if (email && password) {
       this.props.dispatch(login(email, password));
+      this.setState({
+        email: '',
+        password: '',
+      });
     }
   };
 

@@ -12,6 +12,7 @@ import {
   LOGIN_START,
   LOGIN_SUCCESS,
   LOGIN_FAILURE,
+  CLEAR_AUTH_MESSAGES,
 } from './actionTypes';
 
 /*SIGNUP*/
@@ -103,5 +104,12 @@ export function login(email, password) {
         }
         return dispatch(loginFailure(data.message));
       });
+  };
+}
+
+/*CLEAR AUTH*/
+export function clearAuthMessages() {
+  return {
+    type: CLEAR_AUTH_MESSAGES,
   };
 }

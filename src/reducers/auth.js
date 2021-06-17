@@ -1,4 +1,5 @@
 import {
+  CLEAR_AUTH_MESSAGES,
   LOGIN_FAILURE,
   LOGIN_START,
   LOGIN_SUCCESS,
@@ -45,6 +46,12 @@ export default function auth(state = initialAuthState, action) {
         error: null,
         isLoggedin: true,
         inProgress: false,
+      };
+    case CLEAR_AUTH_MESSAGES:
+      return {
+        ...state,
+        error: null,
+        success: null,
       };
     default:
       return state;
