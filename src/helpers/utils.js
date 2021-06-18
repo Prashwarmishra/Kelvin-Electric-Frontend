@@ -14,6 +14,13 @@ export function getAuthHeader() {
   };
 }
 
+export function getAuthHeaderWithToken() {
+  return {
+    'Content-Type': 'Application/x-www-form-urlencoded',
+    Authorization: `Bearer ${getAuthTokenFromLocalStorage()}`,
+  };
+}
+
 export function setAuthTokenInLocalStorage(token) {
   localStorage.setItem('token', token);
 }

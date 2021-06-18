@@ -53,7 +53,6 @@ class Dealerships extends Component {
 
           <div className="page-parent">
             {cityDealerships.map((dealership) => {
-              console.log('Is someone there?');
               return (
                 <DealershipCard
                   key={dealership._id}

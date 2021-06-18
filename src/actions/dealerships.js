@@ -26,7 +26,7 @@ export function locateDealership() {
 
     fetch(url, {
       method: 'GET',
-      headers: getAuthHeader,
+      headers: getAuthHeader(),
     })
       .then((response) => response.json())
       .then((data) => {

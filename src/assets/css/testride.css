@@ -35,11 +35,6 @@
   align-items: center;
 }
 
-.testride-wrapper > h3 {
-  font-family: 'Poppins';
-  font-size: 1.2rem;
-}
-
 .testride-container {
   display: grid;
   grid-template-columns: 1fr 1fr;

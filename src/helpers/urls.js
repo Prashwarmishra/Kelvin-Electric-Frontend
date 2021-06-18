@@ -7,4 +7,5 @@ export const APIUrls = {
   forgetPassword: () => `${API_ROOT}/user/forgot-password`,
   resetPassword: (userId) => `${API_ROOT}/user/reset-password/${userId}`,
   locateDealerships: () => `${API_ROOT}/product/locate-dealerships`,
+  bookTestride: () => `${API_ROOT}/product/testride`,
 };
