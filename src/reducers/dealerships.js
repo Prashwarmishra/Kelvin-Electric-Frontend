@@ -4,7 +4,7 @@ import {
 } from '../actions/actionTypes';
 
 const initialDealershipState = {
-  dealerships: {},
+  dealershipList: [],
   error: null,
 };
 
@@ -13,7 +13,7 @@ export default function dealerships(state = initialDealershipState, action) {
     case LOCATE_DEALERSHIP_SUCCESS:
       return {
         ...state,
-        dealerships: action.dealerships,
+        dealershipList: [...action.dealerships],
         error: null,
       };
     case LOCATE_DEALERSHIP_FAILURE:

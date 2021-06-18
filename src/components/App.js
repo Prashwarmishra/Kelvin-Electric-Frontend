@@ -5,7 +5,15 @@ import { Layout } from 'antd';
 import jwtDecode from 'jwt-decode';
 
 import 'antd/dist/antd.css';
-import { Navbar, Home, Signup, Login, ForgetPassword, ResetPassword } from './';
+import {
+  Navbar,
+  Home,
+  Signup,
+  Login,
+  ForgetPassword,
+  ResetPassword,
+  Dealerships,
+} from './';
 import { getAuthTokenFromLocalStorage } from '../helpers/utils';
 import { authenticateUser } from '../actions/auth';
 import Page404 from './Page404';
@@ -28,6 +36,7 @@ class App extends Component {
             <Content>
               <Switch>
                 <Route exact path="/" component={Home}></Route>
+                <Route path="/locate" component={Dealerships}></Route>
                 <Route path="/signup" component={Signup}></Route>
                 <Route path="/login" component={Login}></Route>
                 <Route

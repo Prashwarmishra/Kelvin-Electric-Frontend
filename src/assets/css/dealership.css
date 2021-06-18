@@ -1,0 +1,66 @@
+.ant-select-selector {
+  background-color: transparent !important;
+}
+
+.page-heading > h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 3rem;
+  margin: 0;
+}
+.page-main {
+  padding: 1rem;
+  box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff;
+  margin: 20px;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 75vw;
+}
+.page-description {
+  display: flex;
+  width: 92%;
+  justify-content: space-around;
+  align-items: center;
+}
+.page-description > p {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.city-select {
+  width: 25em;
+}
+
+.page-parent {
+  margin: 3em;
+  padding: 2em;
+  width: 90%;
+}
+
+.dealership-card {
+  padding: 1em;
+  box-shadow: 33px 13px 20px #cbced1, -13px -13px 20px #fff;
+  border-radius: 1em;
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr;
+  margin: 2em 0;
+}
+
+.dealership-card > div {
+  font-size: 1rem;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+}
+
+.dealership-card > div > span {
+  font-size: 0.8rem;
+  font-family: 'Poppins';
+}
+
+.dealership-name {
+  font-weight: 500;
+  font-size: 1.2rem !important;
+  font-family: 'Poppins', sans-serif;
+}

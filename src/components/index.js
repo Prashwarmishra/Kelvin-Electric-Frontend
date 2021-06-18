@@ -8,6 +8,8 @@ import Login from './Login';
 import ForgetPassword from './ForgetPassword';
 import Page404 from './Page404';
 import ResetPassword from './ResetPassword';
+import Dealerships from './Dealerships';
+import DealershipCard from './DealershipCard';
 
 export {
   Navbar,
@@ -20,4 +22,6 @@ export {
   ForgetPassword,
   Page404,
   ResetPassword,
+  Dealerships,
+  DealershipCard,
 };
