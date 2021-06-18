@@ -13,6 +13,7 @@ import {
   ForgetPassword,
   ResetPassword,
   Dealerships,
+  TestRide,
 } from './';
 import { getAuthTokenFromLocalStorage } from '../helpers/utils';
 import { authenticateUser } from '../actions/auth';
@@ -47,6 +48,7 @@ class App extends Component {
                   path="/reset-password/:userId"
                   component={ResetPassword}
                 ></Route>
+                <Route to="/test-ride" component={TestRide}></Route>
                 <Route component={Page404}></Route>
               </Switch>
             </Content>

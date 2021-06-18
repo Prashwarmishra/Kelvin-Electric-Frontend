@@ -32,7 +32,6 @@ class Dealerships extends Component {
 
   render() {
     const { cityDealerships } = this.state;
-    console.log('////////', cityDealerships);
     return (
       <div className="wrapper">
         <div className="page-heading">

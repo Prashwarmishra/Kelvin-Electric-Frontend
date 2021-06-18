@@ -1,0 +1,83 @@
+.ant-picker {
+  background: transparent !important;
+}
+
+.alert-wrapper {
+  display: flex;
+  padding: 1em;
+  align-items: center;
+}
+
+.login-link {
+  background: #6ab8f7;
+  color: white;
+  border-radius: 0;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  /* width: 8rem; */
+  justify-content: center;
+  transition: all 250ms;
+  cursor: pointer;
+}
+
+.login-link:hover {
+  transform: scale(0.95);
+}
+
+.testride-wrapper {
+  padding: 1rem;
+  box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff;
+  margin: 20px;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.testride-wrapper > h3 {
+  font-family: 'Poppins';
+  font-size: 1.2rem;
+}
+
+.testride-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 75vw;
+}
+
+.testride-container > img {
+  width: 100%;
+}
+
+.testride-form {
+  display: flex;
+  flex-direction: column;
+}
+.testride-form .field {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  align-items: center;
+  padding: 1em;
+}
+
+.field-label,
+.field-value {
+  margin: 0 1em;
+}
+
+.field-label {
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+}
+
+.testride-form > button {
+  width: 12rem;
+  margin: 1em auto;
+  color: white;
+  background-color: hsl(260, 8%, 14%);
+  height: 3rem;
+  border-radius: 0;
+  transition: all 250ms;
+  cursor: pointer;
+}

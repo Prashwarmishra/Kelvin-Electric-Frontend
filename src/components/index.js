@@ -10,6 +10,7 @@ import Page404 from './Page404';
 import ResetPassword from './ResetPassword';
 import Dealerships from './Dealerships';
 import DealershipCard from './DealershipCard';
+import TestRide from './TestRide';
 
 export {
   Navbar,
@@ -24,4 +25,5 @@ export {
   ResetPassword,
   Dealerships,
   DealershipCard,
+  TestRide,
 };

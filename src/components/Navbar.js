@@ -34,7 +34,9 @@ class Navbar extends Component {
           <Menu.Item key="1">
             <Link to="/locate">Locate</Link>
           </Menu.Item>
-          <Menu.Item key="2">Test-ride</Menu.Item>
+          <Menu.Item key="2">
+            <Link to="/test-ride">Test-ride</Link>
+          </Menu.Item>
           <Menu.Item key="3">Book Now</Menu.Item>
           <Menu.Item key="4">
             {isLoggedin ? (
