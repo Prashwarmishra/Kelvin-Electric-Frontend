@@ -6,4 +6,5 @@ export const APIUrls = {
   userLogin: () => `${API_ROOT}/user/sign-in`,
   forgetPassword: () => `${API_ROOT}/user/forgot-password`,
   resetPassword: (userId) => `${API_ROOT}/user/reset-password/${userId}`,
+  locateDealerships: () => `${API_ROOT}/product/locate-dealerships`,
 };
