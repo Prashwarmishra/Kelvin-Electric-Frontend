@@ -29,7 +29,7 @@ export function testrideBookingFailure(error) {
 
 export function bookTestride(dealershipName, date, time) {
   return (dispatch) => {
-    dispatch(testrideBookingStart);
+    dispatch(testrideBookingStart());
     const url = APIUrls.bookTestride();
 
     fetch(url, {

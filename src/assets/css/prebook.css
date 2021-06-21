@@ -1,0 +1,49 @@
+.prebook-form {
+  display: grid;
+  width: 85vw;
+}
+
+.color-select .ant-select-selection-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ant-radio-group-outline {
+  display: flex;
+  height: 10rem;
+}
+.ant-radio {
+  display: none !important;
+}
+.ant-radio-wrapper-checked {
+  box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff;
+  border-radius: 10px;
+  transform: scale(1.1);
+}
+.ant-radio-wrapper-checked p {
+  font-weight: bold;
+}
+.img-field {
+  margin-bottom: 2em;
+}
+.scooter-color {
+  width: 100% !important;
+}
+.color-text {
+  text-align: center;
+  font-family: 'Poppins';
+}
+.field-input {
+  width: 35em;
+  border: none;
+  margin: 10px;
+  background: none;
+  font-size: 18px;
+  color: #555;
+  font-weight: 100;
+  border-radius: 1rem;
+  padding: 0.5em 1em;
+  outline: none;
+  -webkit-box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+  box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+}

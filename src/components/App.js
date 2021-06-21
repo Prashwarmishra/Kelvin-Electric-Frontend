@@ -14,7 +14,9 @@ import {
   ResetPassword,
   Dealerships,
   TestRide,
+  Prebook,
 } from './';
+
 import { getAuthTokenFromLocalStorage } from '../helpers/utils';
 import { authenticateUser } from '../actions/auth';
 import Page404 from './Page404';
@@ -48,7 +50,8 @@ class App extends Component {
                   path="/reset-password/:userId"
                   component={ResetPassword}
                 ></Route>
-                <Route to="/test-ride" component={TestRide}></Route>
+                <Route path="/test-ride" component={TestRide}></Route>
+                <Route path="/prebook" component={Prebook}></Route>
                 <Route component={Page404}></Route>
               </Switch>
             </Content>

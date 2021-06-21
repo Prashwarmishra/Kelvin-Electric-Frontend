@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 import '../assets/css/login_signup.css';
 import { clearAuthMessages, login } from '../actions/auth';
@@ -37,8 +37,12 @@ class Login extends Component {
   };
 
   render() {
-    const { error, inProgress } = this.props.auth;
+    const { error, inProgress, isLoggedin } = this.props.auth;
     const { email, password } = this.state;
+
+    if (isLoggedin) {
+      return <Redirect to={'/test-ride'} />;
+    }
     return (
       <div className="wrapper">
         {error && <div className="error-dialog">{error}</div>}

@@ -11,6 +11,7 @@ import ResetPassword from './ResetPassword';
 import Dealerships from './Dealerships';
 import DealershipCard from './DealershipCard';
 import TestRide from './TestRide';
+import Prebook from './Prebook';
 
 export {
   Navbar,
@@ -26,4 +27,5 @@ export {
   Dealerships,
   DealershipCard,
   TestRide,
+  Prebook,
 };

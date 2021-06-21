@@ -7,6 +7,7 @@ import { DatePicker } from 'antd';
 import testRide from '../assets/images/testride.jpg';
 import { locateDealership } from '../actions/dealerships';
 import { bookTestride, clearTestRideBookingMessage } from '../actions/testride';
+import { Footer } from './';
 
 const { Option } = Select;
 
@@ -51,6 +52,11 @@ class TestRide extends Component {
     const { dealershipName, date, time } = this.state;
     if (dealershipName && date && time) {
       this.props.dispatch(bookTestride(dealershipName, date, time));
+      this.setState({
+        dealershipName: '',
+        date: '',
+        time: '',
+      });
     }
   };
 
@@ -61,7 +67,7 @@ class TestRide extends Component {
 
     return (
       <div className="wrapper">
-        <h1 className="login-signup-heading">Test Ride</h1>
+        <h1 className="login-signup-heading">Fancy a Test Ride?</h1>
         {error && <div className="error-dialog">{error}</div>}
         {success && <div className="success-dialog">{success}</div>}
         {!isLoggedin ? (
@@ -76,6 +82,12 @@ class TestRide extends Component {
           </div>
         ) : (
           <div className="testride-wrapper">
+            <p className="testride-description">
+              Do you need personal advice and want to take a closer look at a
+              Kelvin electric scooter? Fill the form below to find your nearest
+              Kelvin dealership and book an appointment for a test ride! In case
+              you wish to change your plans, cancel it – no hassle!
+            </p>
             <div className="testride-container">
               <img src={testRide} alt="testride img" />
               <form className="testride-form">
@@ -133,7 +145,9 @@ class TestRide extends Component {
                   </Select>
                 </div>
                 {inProgress ? (
-                  <button disabled>Scheduling your ride...</button>
+                  <button disabled className="disabled-btn">
+                    Scheduling your ride...
+                  </button>
                 ) : (
                   <button onClick={this.handleSubmit}>
                     Schedule Test-Ride
@@ -143,6 +157,7 @@ class TestRide extends Component {
             </div>
           </div>
         )}
+        <Footer />
       </div>
     );
   }

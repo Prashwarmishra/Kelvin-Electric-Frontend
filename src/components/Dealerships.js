@@ -4,6 +4,7 @@ import { locateDealership } from '../actions/dealerships';
 import DealershipCard from './DealershipCard';
 import '../assets/css/dealership.css';
 import { Select } from 'antd';
+import { Footer } from '.';
 
 const { Option } = Select;
 
@@ -33,35 +34,38 @@ class Dealerships extends Component {
   render() {
     const { cityDealerships } = this.state;
     return (
-      <div className="wrapper">
-        <div className="page-heading">
-          <h1>Locate Dealerships</h1>
-        </div>
-        <div className="page-main">
-          <div className="page-description">
-            <p>We are currently operating in the following cities: </p>
-            <Select
-              defaultValue="Select Your City"
-              onChange={this.handleChange}
-              className="city-select"
-            >
-              <Option value="Mumbai">Mumbai</Option>
-              <Option value="Bengaluru">Bengaluru</Option>
-              <Option value="Hyderabad">Hyderabad</Option>
-            </Select>
+      <div>
+        <div className="wrapper">
+          <div className="page-heading">
+            <h1>Locate Dealerships</h1>
           </div>
+          <div className="page-main">
+            <div className="page-description">
+              <p>We are currently operating in the following cities: </p>
+              <Select
+                defaultValue="Select Your City"
+                onChange={this.handleChange}
+                className="city-select"
+              >
+                <Option value="Mumbai">Mumbai</Option>
+                <Option value="Bengaluru">Bengaluru</Option>
+                <Option value="Hyderabad">Hyderabad</Option>
+              </Select>
+            </div>
 
-          <div className="page-parent">
-            {cityDealerships.map((dealership) => {
-              return (
-                <DealershipCard
-                  key={dealership._id}
-                  dealership={dealership}
-                ></DealershipCard>
-              );
-            })}
+            <div className="page-parent">
+              {cityDealerships.map((dealership) => {
+                return (
+                  <DealershipCard
+                    key={dealership._id}
+                    dealership={dealership}
+                  ></DealershipCard>
+                );
+              })}
+            </div>
           </div>
         </div>
+        <Footer />
       </div>
     );
   }
