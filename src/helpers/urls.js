@@ -8,4 +8,6 @@ export const APIUrls = {
   resetPassword: (userId) => `${API_ROOT}/user/reset-password/${userId}`,
   locateDealerships: () => `${API_ROOT}/product/locate-dealerships`,
   bookTestride: () => `${API_ROOT}/product/testride`,
+  createPaymentReciept: () => `${API_ROOT}/product/payment`,
+  preorder: () => `${API_ROOT}/product/preorder`,
 };
