@@ -66,97 +66,100 @@ class TestRide extends Component {
     const { success, error, inProgress } = this.props.testride;
 
     return (
-      <div className="wrapper">
-        <h1 className="login-signup-heading">Fancy a Test Ride?</h1>
-        {error && <div className="error-dialog">{error}</div>}
-        {success && <div className="success-dialog">{success}</div>}
-        {!isLoggedin ? (
-          <div className="alert-wrapper">
-            <h3>You must be logged-in to continue:</h3>
-            <Link to="/login">
-              <button className="login-link">Log In</button>
-            </Link>
-            <Link to="/signup">
-              <button className="login-link">Create Account</button>
-            </Link>
-          </div>
-        ) : (
-          <div className="testride-wrapper">
-            <p className="testride-description">
-              Do you need personal advice and want to take a closer look at a
-              Kelvin electric scooter? Fill the form below to find your nearest
-              Kelvin dealership and book an appointment for a test ride! In case
-              you wish to change your plans, cancel it – no hassle!
-            </p>
-            <div className="testride-container">
-              <img src={testRide} alt="testride img" />
-              <form className="testride-form">
-                <div className="field">
-                  <div className="field-label">Select City</div>
-                  <Select
-                    defaultValue="No City Selected"
-                    onChange={this.handleCitySelect}
-                    className="city-select field-value"
-                  >
-                    <Option value="Mumbai">Mumbai</Option>
-                    <Option value="Bengaluru">Bengaluru</Option>
-                    <Option value="Hyderabad">Hyderabad</Option>
-                  </Select>
-                </div>
-
-                <div className="field">
-                  <div className="field-label">Select Dealership</div>
-                  <Select
-                    defaultValue="No Dealership selected"
-                    onChange={(e) => this.handleChange('dealershipName', e)}
-                    className="city-select field-value"
-                  >
-                    {cityDealershipList.map((dealership) => (
-                      <Option
-                        value={dealership.dealershipName}
-                        key={dealership._id}
-                      >
-                        {dealership.dealershipName}
-                      </Option>
-                    ))}
-                  </Select>
-                </div>
-
-                <div className="field">
-                  <div className="field-label">Select Date</div>
-                  <DatePicker
-                    className="city-select field-value"
-                    onChange={(e) => this.handleChange('date', e._d)}
-                  />
-                </div>
-
-                <div className="field">
-                  <div className="field-label">Select Time</div>
-                  <Select
-                    defaultValue="No Time Selected"
-                    onChange={(e) => this.handleChange('time', e)}
-                    className="city-select field-value"
-                  >
-                    <Option value="2">2 PM - 3PM</Option>
-                    <Option value="3">3 PM - 4PM</Option>
-                    <Option value="4">4 PM - 5PM</Option>
-                    <Option value="5">5 PM - 6PM</Option>
-                    <Option value="6">6 PM - 7PM</Option>
-                  </Select>
-                </div>
-                {inProgress ? (
-                  <button disabled className="disabled-btn">
-                    Scheduling your ride...
-                  </button>
-                ) : (
-                  <button onClick={this.handleSubmit}>
-                    Schedule Test-Ride
-                  </button>
-                )}
-              </form>
+      <div>
+        <div className="wrapper">
+          <h1 className="login-signup-heading">Fancy a Test Ride?</h1>
+          {error && <div className="error-dialog">{error}</div>}
+          {success && <div className="success-dialog">{success}</div>}
+          {!isLoggedin ? (
+            <div className="alert-wrapper">
+              <h3>You must be logged-in to continue:</h3>
+              <Link to="/login">
+                <button className="login-link">Log In</button>
+              </Link>
+              <Link to="/signup">
+                <button className="login-link">Create Account</button>
+              </Link>
             </div>
-          </div>
-        )}
+          ) : (
+            <div className="testride-wrapper">
+              <p className="testride-description">
+                Do you need personal advice and want to take a closer look at a
+                Kelvin electric scooter? Fill the form below to find your
+                nearest Kelvin dealership and book an appointment for a test
+                ride! In case you wish to change your plans, cancel it – no
+                hassle!
+              </p>
+              <div className="testride-container">
+                <img src={testRide} alt="testride img" />
+                <form className="testride-form">
+                  <div className="field">
+                    <div className="field-label">Select City</div>
+                    <Select
+                      defaultValue="No City Selected"
+                      onChange={this.handleCitySelect}
+                      className="city-select field-value"
+                    >
+                      <Option value="Mumbai">Mumbai</Option>
+                      <Option value="Bengaluru">Bengaluru</Option>
+                      <Option value="Hyderabad">Hyderabad</Option>
+                    </Select>
+                  </div>
+
+                  <div className="field">
+                    <div className="field-label">Select Dealership</div>
+                    <Select
+                      defaultValue="No Dealership selected"
+                      onChange={(e) => this.handleChange('dealershipName', e)}
+                      className="city-select field-value"
+                    >
+                      {cityDealershipList.map((dealership) => (
+                        <Option
+                          value={dealership.dealershipName}
+                          key={dealership._id}
+                        >
+                          {dealership.dealershipName}
+                        </Option>
+                      ))}
+                    </Select>
+                  </div>
+
+                  <div className="field">
+                    <div className="field-label">Select Date</div>
+                    <DatePicker
+                      className="city-select field-value"
+                      onChange={(e) => this.handleChange('date', e._d)}
+                    />
+                  </div>
+
+                  <div className="field">
+                    <div className="field-label">Select Time</div>
+                    <Select
+                      defaultValue="No Time Selected"
+                      onChange={(e) => this.handleChange('time', e)}
+                      className="city-select field-value"
+                    >
+                      <Option value="2">2 PM - 3PM</Option>
+                      <Option value="3">3 PM - 4PM</Option>
+                      <Option value="4">4 PM - 5PM</Option>
+                      <Option value="5">5 PM - 6PM</Option>
+                      <Option value="6">6 PM - 7PM</Option>
+                    </Select>
+                  </div>
+                  {inProgress ? (
+                    <button disabled className="disabled-btn">
+                      Scheduling your ride...
+                    </button>
+                  ) : (
+                    <button onClick={this.handleSubmit}>
+                      Schedule Test-Ride
+                    </button>
+                  )}
+                </form>
+              </div>
+            </div>
+          )}
+        </div>
         <Footer />
       </div>
     );

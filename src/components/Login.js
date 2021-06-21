@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
-
+import { Footer } from '.';
 import '../assets/css/login_signup.css';
 import { clearAuthMessages, login } from '../actions/auth';
 
@@ -44,36 +44,39 @@ class Login extends Component {
       return <Redirect to={'/test-ride'} />;
     }
     return (
-      <div className="wrapper">
-        {error && <div className="error-dialog">{error}</div>}
+      <div>
+        <div className="wrapper">
+          {error && <div className="error-dialog">{error}</div>}
 
-        <h1 className="login-signup-heading">Log In</h1>
-        <div className="signup-wrapper">
-          <form className="login-signup-form">
-            <input
-              type="email"
-              placeholder="Your Email"
-              required
-              onChange={(e) => this.handleChange('email', e.target.value)}
-              value={email}
-            />
-            <input
-              type="password"
-              placeholder="Your Password"
-              required
-              onChange={(e) => this.handleChange('password', e.target.value)}
-              value={password}
-            />
-            {inProgress ? (
-              <button disabled className="disabled-btn">
-                Logging In...
-              </button>
-            ) : (
-              <button onClick={this.handleSubmit}>Log In</button>
-            )}
-          </form>
-          <Link to="/forget-password">Forgot Password?</Link>
+          <h1 className="login-signup-heading">Log In</h1>
+          <div className="signup-wrapper">
+            <form className="login-signup-form">
+              <input
+                type="email"
+                placeholder="Your Email"
+                required
+                onChange={(e) => this.handleChange('email', e.target.value)}
+                value={email}
+              />
+              <input
+                type="password"
+                placeholder="Your Password"
+                required
+                onChange={(e) => this.handleChange('password', e.target.value)}
+                value={password}
+              />
+              {inProgress ? (
+                <button disabled className="disabled-btn">
+                  Logging In...
+                </button>
+              ) : (
+                <button onClick={this.handleSubmit}>Log In</button>
+              )}
+            </form>
+            <Link to="/forget-password">Forgot Password?</Link>
+          </div>
         </div>
+        <Footer />
       </div>
     );
   }
