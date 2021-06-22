@@ -11,4 +11,5 @@ export const APIUrls = {
   createPaymentReciept: () => `${API_ROOT}/product/payment`,
   preorder: () => `${API_ROOT}/product/preorder`,
   fetchPreorders: (userId) => `${API_ROOT}/user/get-preorders/${userId}`,
+  cancelOrder: (preorderId) => `${API_ROOT}/product/cancel-order/${preorderId}`,
 };
