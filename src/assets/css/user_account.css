@@ -1,0 +1,74 @@
+.account-wrapper {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.account-card {
+  padding: 2rem;
+  margin: 2rem;
+}
+.account-heading {
+  font-size: 1.3rem;
+}
+.account-container {
+  padding: 1rem 2rem;
+  box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff;
+  margin: 20px;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80vw;
+}
+.ac-parent {
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr;
+  margin: 1rem;
+  box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff;
+  align-items: center;
+  border-radius: 1em;
+  transition: all 500ms;
+}
+.ac-parent:hover {
+  transform: scale(0.98);
+}
+.ac-child {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  cursor: default;
+}
+.ac-child > img {
+  width: 90%;
+}
+.ac-child > span {
+  font-size: 1rem;
+}
+.ac-address {
+  font-family: 'Poppins';
+  font-weight: bold;
+  margin-bottom: 7px;
+  font-size: 1.1rem;
+}
+.ac-btn-group {
+  flex-direction: row;
+}
+.ac-child-button {
+  background: hsl(260, 8%, 14%);
+  color: white;
+  border-radius: 0;
+  height: 40px;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  width: 126px;
+  justify-content: center;
+  box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff;
+  cursor: pointer;
+  margin: 0 1rem;
+  transition: all 250ms;
+}
+.ac-child-button:hover {
+  transform: scale(0.95);
+}

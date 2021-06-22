@@ -13,6 +13,7 @@ import DealershipCard from './DealershipCard';
 import TestRide from './TestRide';
 import Prebook from './Prebook';
 import SuccessPage from './SuccessPage';
+import UserAccount from './UserAccount';
 
 export {
   Navbar,
@@ -30,4 +31,5 @@ export {
   TestRide,
   Prebook,
   SuccessPage,
+  UserAccount,
 };

@@ -21,6 +21,7 @@ import {
   TestRide,
   Prebook,
   SuccessPage,
+  UserAccount,
 } from './';
 
 import { getAuthTokenFromLocalStorage } from '../helpers/utils';
@@ -30,7 +31,6 @@ const { Content } = Layout;
 
 const PrivateRoute = (privateRouteProps) => {
   const { isLoggedin, path, component: Component } = privateRouteProps;
-  console.log('success================', isLoggedin);
   return (
     <Route
       path={path}
@@ -80,7 +80,11 @@ class App extends Component {
                   component={SuccessPage}
                   isLoggedin={isLoggedin}
                 ></PrivateRoute>
-                {/* <Route path="/success" component={SuccessPage}></Route> */}
+                <PrivateRoute
+                  path="/account"
+                  component={UserAccount}
+                  isLoggedin={isLoggedin}
+                ></PrivateRoute>
                 <Route component={Page404}></Route>
               </Switch>
             </Content>

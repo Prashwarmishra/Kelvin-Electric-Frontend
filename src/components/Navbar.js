@@ -42,7 +42,7 @@ class Navbar extends Component {
           </Menu.Item>
           <Menu.Item key="4">
             {isLoggedin ? (
-              <div>My Account</div>
+              <Link to="/account">My Account</Link>
             ) : (
               <Link to="/login">Log In</Link>
             )}
