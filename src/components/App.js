@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Redirect,
+  Route,
+  Switch,
+} from 'react-router-dom';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Layout } from 'antd';
@@ -15,6 +20,7 @@ import {
   Dealerships,
   TestRide,
   Prebook,
+  SuccessPage,
 } from './';
 
 import { getAuthTokenFromLocalStorage } from '../helpers/utils';
@@ -22,8 +28,22 @@ import { authenticateUser } from '../actions/auth';
 import Page404 from './Page404';
 const { Content } = Layout;
 
+const PrivateRoute = (privateRouteProps) => {
+  const { isLoggedin, path, component: Component } = privateRouteProps;
+  console.log('success================', isLoggedin);
+  return (
+    <Route
+      path={path}
+      render={(props) =>
+        isLoggedin ? <Component {...props} /> : <Redirect to="/login" />
+      }
+    ></Route>
+  );
+};
+
 class App extends Component {
   componentDidMount() {
+    console.log('INSIDE CDM OF APP');
     const token = getAuthTokenFromLocalStorage();
     if (token) {
       const user = jwtDecode(token);
@@ -31,6 +51,9 @@ class App extends Component {
     }
   }
   render() {
+    console.log('INSIDE APP RENDER');
+
+    const { isLoggedin } = this.props.auth;
     return (
       <Router>
         <div className="App">
@@ -52,6 +75,12 @@ class App extends Component {
                 ></Route>
                 <Route path="/test-ride" component={TestRide}></Route>
                 <Route path="/prebook" component={Prebook}></Route>
+                <PrivateRoute
+                  path="/success"
+                  component={SuccessPage}
+                  isLoggedin={isLoggedin}
+                ></PrivateRoute>
+                {/* <Route path="/success" component={SuccessPage}></Route> */}
                 <Route component={Page404}></Route>
               </Switch>
             </Content>
@@ -62,4 +91,10 @@ class App extends Component {
   }
 }
 
-export default connect()(App);
+function mapStateToProps({ auth }) {
+  return {
+    auth,
+  };
+}
+
+export default connect(mapStateToProps)(App);

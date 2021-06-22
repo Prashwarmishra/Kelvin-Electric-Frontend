@@ -54,3 +54,8 @@
   -webkit-box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
   box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
 }
+
+.ant-result-subtitle {
+  font-size: 1rem !important;
+  font-family: 'Poppins';
+}

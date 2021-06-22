@@ -1,9 +1,20 @@
 import React from 'react';
+import { Result, Button } from 'antd';
+import { Link } from 'react-router-dom';
 
 function Page404(props) {
   return (
-    <div className="page404">
-      <h2>404. Page not Found.</h2>
+    <div className="wrapper">
+      <Result
+        status="404"
+        title="404"
+        subTitle="Sorry, the page you visited does not exist."
+        extra={
+          <Link to="/">
+            <Button type="primary">Back Home</Button>
+          </Link>
+        }
+      />
     </div>
   );
 }

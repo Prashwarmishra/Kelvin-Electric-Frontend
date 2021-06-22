@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Select } from 'antd';
@@ -26,6 +26,7 @@ class Prebook extends Component {
       shippingDealershipName: '',
       shippingAddress: '',
       shippingLandmark: '',
+      paymentSuccess: false,
     };
   }
   componentDidMount() {
@@ -92,6 +93,9 @@ class Prebook extends Component {
     const response = await fetch(url, options);
     const data = await response.json();
     console.log('PREORDER DETAILS ARE: ', data);
+    this.setState({
+      paymentSuccess: true,
+    });
   };
 
   handleSubmit = async (e) => {
@@ -151,7 +155,7 @@ class Prebook extends Component {
         address: 'Razorpay Corporate Office',
       },
       theme: {
-        color: '#3399cc',
+        color: 'hsl(260, 8%, 14%)',
       },
     };
 
@@ -169,8 +173,12 @@ class Prebook extends Component {
 
   render() {
     // console.log('/////////////////', this.state);
-    const { cityDealershipList } = this.state;
+    const { cityDealershipList, paymentSuccess } = this.state;
     const { isLoggedin } = this.props.auth;
+
+    if (paymentSuccess) {
+      return <Redirect to="/success" />;
+    }
 
     return (
       <div>
