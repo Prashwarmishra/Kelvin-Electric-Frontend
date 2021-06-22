@@ -14,6 +14,7 @@ import TestRide from './TestRide';
 import Prebook from './Prebook';
 import SuccessPage from './SuccessPage';
 import UserAccount from './UserAccount';
+import Preorder from './Preorder';
 
 export {
   Navbar,
@@ -32,4 +33,5 @@ export {
   Prebook,
   SuccessPage,
   UserAccount,
+  Preorder,
 };

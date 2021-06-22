@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { Footer } from '.';
+import { Preorder, Footer } from '.';
+import { fetchPreorders } from '../actions/preorders';
 import '../assets/css/user_account.css';
-import kelvin_black from '../assets/images/kelvin_black.png';
 
 class UserAccount extends Component {
+  componentDidMount() {
+    const userId = this.props.auth.user._id;
+    this.props.dispatch(fetchPreorders(userId));
+  }
+
   render() {
+    const { preorderList } = this.props.preorders;
     return (
       <div>
         <div className="wrapper">
@@ -15,41 +21,9 @@ class UserAccount extends Component {
               <h1>Your Bookings</h1>
             </div>
             <div className="account-container">
-              <div className="ac-parent">
-                <div className="ac-child">
-                  <img src={kelvin_black} alt="scooter-img" />
-                </div>
-                <div className="ac-child">
-                  <span className="ac-address">Delivery Address</span>
-                  <span className="ac-addressName">
-                    302, Sri Ganesha Enclave, 13th main
-                  </span>
-                  <span className="ac-addressLandmark">HAL 3rd Stage</span>
-                  <span className="ac-addressCity">Bengaluru</span>
-                </div>
-                <div className="ac-child ac-btn-group">
-                  <button className="ac-child-button">Support</button>
-                  <button className="ac-child-button">Cancel Booking</button>
-                </div>
-              </div>
-
-              <div className="ac-parent">
-                <div className="ac-child">
-                  <img src={kelvin_black} alt="scooter-img" />
-                </div>
-                <div className="ac-child">
-                  <span className="ac-address">Delivery Address</span>
-                  <span className="ac-addressName">
-                    302, Sri Ganesha Enclave, 13th main
-                  </span>
-                  <span className="ac-addressLandmark">HAL 3rd Stage</span>
-                  <span className="ac-addressCity">Bengaluru</span>
-                </div>
-                <div className="ac-child ac-btn-group">
-                  <button className="ac-child-button">Support</button>
-                  <button className="ac-child-button">Cancel Booking</button>
-                </div>
-              </div>
+              {preorderList.map((preorder) => (
+                <Preorder preorder={preorder} key={preorder._id} />
+              ))}
             </div>
           </div>
         </div>
@@ -62,6 +36,7 @@ class UserAccount extends Component {
 function mapStateToProps(state) {
   return {
     auth: state.auth,
+    preorders: state.preorders,
   };
 }
 

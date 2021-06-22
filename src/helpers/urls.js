@@ -10,4 +10,5 @@ export const APIUrls = {
   bookTestride: () => `${API_ROOT}/product/testride`,
   createPaymentReciept: () => `${API_ROOT}/product/payment`,
   preorder: () => `${API_ROOT}/product/preorder`,
+  fetchPreorders: (userId) => `${API_ROOT}/user/get-preorders/${userId}`,
 };
