@@ -30,7 +30,7 @@ export function locateDealership() {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log('DEALERSHIP DATA: ', data.data.dealerships);
+        console.log('DEALERSHIP DATA: ', data);
         if (data.success) {
           return dispatch(locateDealershipSuccess(data.data.dealerships));
         }

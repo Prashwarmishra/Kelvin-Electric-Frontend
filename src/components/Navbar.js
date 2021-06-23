@@ -20,7 +20,7 @@ class Navbar extends Component {
       <Header>
         <div className="website-logo">
           <h3>
-            <Link to="/">
+            <Link to="/" style={{ color: 'white' }}>
               <ApiFilled
                 style={{ color: 'white', fontSize: '1.4rem', marginRight: 5 }}
               />
