@@ -137,9 +137,9 @@ class Prebook extends Component {
       image: 'https://example.com/your_logo',
       order_id: paymentReceipt.data.id,
       handler: function (response) {
-        alert(response.razorpay_payment_id);
-        alert(response.razorpay_order_id);
-        alert(response.razorpay_signature);
+        // alert(response.razorpay_payment_id);
+        // alert(response.razorpay_order_id);
+        // alert(response.razorpay_signature);
 
         self.acceptPreorder(
           response.razorpay_order_id,
